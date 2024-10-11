@@ -34,7 +34,7 @@ export function Sidebar() {
           </Button>
         </Link>
 
-        <Link href="/logout">
+        <Link href="/login">
           <Button variant="ghost" className="w-full justify-start">
             <FaSignOutAlt className="mr-2" /> {/* Icon for Logout */}
             Logout
