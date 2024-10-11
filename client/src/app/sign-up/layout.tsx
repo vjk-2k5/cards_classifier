@@ -1,7 +1,6 @@
-// src/app/login/layout.tsx
 import React from 'react';
 
-const LoginLayout = ({ children }: { children: React.ReactNode }) => {
+const SignUpLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
         {children}
@@ -9,4 +8,4 @@ const LoginLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default LoginLayout;
+export default SignUpLayout;
