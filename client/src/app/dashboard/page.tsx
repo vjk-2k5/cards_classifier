@@ -50,7 +50,7 @@ const Dashboard = () => {
             <CardFooter className="flex justify-center">
               <Button
                 className="bg-gray-800 text-white hover:bg-gray-600"
-                onClick={() => router.push('/image-recognizer')} // Use router.push for navigation
+                onClick={() => router.push('#')} // Use router.push for navigation
               >
                 Go to Recognizer
               </Button>
