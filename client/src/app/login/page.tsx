@@ -43,16 +43,18 @@ export default function LoginForm() {
             </div>
             <Input id="password" type="password" required />
           </div>
+          <Link href="/dashboard">
           <Button type="submit" className="w-full">
             Login
           </Button>
+          </Link>
           <Button variant="outline" className="w-full">
             Login with Google
           </Button>
         </div>
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{" "}
-          <Link href="/sign-up" className="underline">
+          <Link href="/signup" className="underline">
             Sign up
           </Link>
         </div>
