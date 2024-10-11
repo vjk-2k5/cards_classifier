@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { FaTachometerAlt, FaTasks, FaCogs, FaSignOutAlt } from "react-icons/fa"; // Import icons from react-icons
+import { FaTachometerAlt, FaTasks, FaCogs, FaSignOutAlt, FaHistory } from "react-icons/fa"; // Import History icon
 
 export function Sidebar() {
   return (
@@ -24,6 +24,13 @@ export function Sidebar() {
           <Button variant="ghost" className="w-full justify-start">
             <FaTasks className="mr-2" /> {/* Icon for Card Classifier */}
             Card Classifier
+          </Button>
+        </Link>
+
+        <Link href="/history">
+          <Button variant="ghost" className="w-full justify-start">
+            <FaHistory className="mr-2" /> {/* Icon for History */}
+            History
           </Button>
         </Link>
 

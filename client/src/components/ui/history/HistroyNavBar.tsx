@@ -1,15 +1,15 @@
 
 import { SheetDemo } from "@/components/ui/Profile";
 
-export const DashboardNavBar = () => {
+export const NavBar = () => {
     return (
       <header className="w-full bg-primary text-primary-foreground shadow">
         <div className="container mx-auto flex justify-between p-4">
-          <h1 className="text-lg font-bold">DashBoard</h1>
+          <h1 className="text-lg font-bold">Histroy</h1>
             <SheetDemo />
         </div>
       </header>
     );
   };
   
-  export default DashboardNavBar;
+  export default NavBar;
