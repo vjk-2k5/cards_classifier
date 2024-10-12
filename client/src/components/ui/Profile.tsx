@@ -11,12 +11,19 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
 export function SheetDemo() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="secondary" color="blue">Profile</Button>
+      <Avatar  className="cursor-pointer">
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>

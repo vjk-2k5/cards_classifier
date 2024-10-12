@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Sidebar } from '@/components/ui/sidebar';
-import { DashboardNavBar } from '@/components/ui/DashBoard/DashBoardNavBar';
+import { NavBar } from '@/components/ui/DashBoard/DashBoardNavBar';
 
 const Dashboard = () => {
   const router = useRouter(); // Use useRouter for navigation
@@ -15,7 +15,7 @@ const Dashboard = () => {
       <Sidebar />
       <div className="flex-1">
         {/* Header */}
-        <DashboardNavBar />
+        <NavBar />
         <div className="flex justify-around items-center h-screen bg-gray-100">
           {/* Image Classifier Card */}
           <Card className="max-w-xs bg-black text-white rounded-lg shadow-lg p-6">
