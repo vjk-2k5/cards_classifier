@@ -18,6 +18,7 @@ export default function LoginForm() {
   return (
     <Card className="mx-auto max-w-sm">
       <CardHeader>
+        <img src="/title.jpg" alt="Logo" className="mb-8" />
         <CardTitle className="text-xl">Sign Up</CardTitle>
         <CardDescription>
           Enter your information to create an account

@@ -1,11 +1,12 @@
-
 import { SheetDemo } from "@/components/ui/Profile";
+import { MainNavBar } from "@/components/ui/NavBar";
 
 export const NavBar = () => {
     return (
-      <header className="w-full bg-primary text-primary-foreground shadow">
+      <header >
         <div className="container mx-auto flex justify-between p-4">
-          <h1 className="text-lg font-bold">Histroy</h1>
+          <h1 className="text-lg font-bold">History</h1>
+          <MainNavBar/>
             <SheetDemo />
         </div>
       </header>
