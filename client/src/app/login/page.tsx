@@ -23,6 +23,7 @@ export default function LoginForm() {
     
     <Card className="mx-auto max-w-sm">
       <CardHeader>
+        <img src="/title.jpg" alt="Logo" className="mb-8" />
         <CardTitle className="text-2xl">Login</CardTitle>
         <CardDescription>
           Enter your email below to login to your account
