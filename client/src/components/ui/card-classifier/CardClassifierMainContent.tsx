@@ -11,6 +11,7 @@ export const MainContent = () => {
   const [accuracy, setAccuracy] = useState<number | null>(null);
   const [openDialog, setOpenDialog] = useState<boolean>(false);
   const [imageUrl, setImageUrl] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false); // Added state for loading
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -38,6 +39,9 @@ export const MainContent = () => {
 
     const formData = new FormData();
     formData.append('image', selectedImage);
+    
+    // Start loading
+    setIsLoading(true);
 
     try {
       const response = await fetch('http://localhost:5000/api/images/upload', {
@@ -54,6 +58,9 @@ export const MainContent = () => {
       setAccuracy(result.accuracy);
     } catch (error) {
       console.error('Error uploading image:', error);
+    } finally {
+      // Stop loading
+      setIsLoading(false);
     }
   };
 
@@ -136,6 +143,32 @@ export const MainContent = () => {
               Reset Image
             </Button>
           </div>
+        )}
+
+        {isLoading && (
+           <div className="mt-4 flex items-center">
+           <svg
+             className="animate-spin h-5 w-5 mr-3 text-black-600"
+             xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 24 24"
+           >
+             <circle
+               className="opacity-25"
+               cx="12"
+               cy="12"
+               r="10"
+               stroke="currentColor"
+               strokeWidth="4"
+             ></circle>
+             <path
+               className="opacity-75"
+               fill="currentColor"
+               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+             ></path>
+           </svg>
+           <p className="text-lg font-medium text-black-600">Processing image...</p>
+         </div>
         )}
       </div>
 
