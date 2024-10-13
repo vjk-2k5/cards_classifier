@@ -38,13 +38,13 @@ export const MainContent = () => {
     }
 
     const formData = new FormData();
-    formData.append('image', selectedImage);
+    formData.append('card', selectedImage);
     
     // Start loading
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/images/upload', {
+      const response = await fetch('http://localhost:5000/api/cards/upload', {
         method: 'POST',
         body: formData,
       });
@@ -52,10 +52,10 @@ export const MainContent = () => {
       if (!response.ok) {
         throw new Error('Failed to upload image');
       }
-
-      const result = await response.json();
-      setClassificationResult(result.classification);
-      setAccuracy(result.accuracy);
+      console.log(response.json());
+      
+    setClassificationResult(response.json().classification);
+    setAccuracy(response.json().accuracy);
     } catch (error) {
       console.error('Error uploading image:', error);
     } finally {
@@ -176,7 +176,7 @@ export const MainContent = () => {
       <div className="flex flex-col items-start w-1/2">
         <h2 className="text-2xl font-semibold text-black mb-2">Image Classification</h2>
         <p className="text-lg text-gray-700 mb-4">
-          {classificationResult || "No classification yet."}
+          {classificationResult ?? "No classification yet."}
         </p>
         <h2 className="text-2xl font-semibold text-black mb-2">Accuracy</h2>
 
