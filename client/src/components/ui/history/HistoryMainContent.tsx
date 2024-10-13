@@ -22,7 +22,7 @@ const HistoryMainContent = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/images/results');
+        const response = await fetch('http://localhost:5000/api/cards/results');
         const data = await response.json();
 
         if (data && data.data) {

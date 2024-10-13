@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 "use client";
 
 import React, { useState } from 'react';
@@ -36,33 +39,37 @@ export const MainContent = () => {
       console.error('No image selected');
       return;
     }
-
+  
     const formData = new FormData();
     formData.append('card', selectedImage);
-    
+  
     // Start loading
     setIsLoading(true);
-
+  
     try {
       const response = await fetch('http://localhost:5000/api/cards/upload', {
         method: 'POST',
         body: formData,
       });
-
+  
       if (!response.ok) {
-        throw new Error('Failed to upload image');
+        // Handle error response
+        const errorText = await response.text(); // Ensure the body is read only once
+        throw new Error(`Failed to upload image: ${errorText}`);
       }
-      console.log(response.json());
-      
-    setClassificationResult(response.json().classification);
-    setAccuracy(response.json().accuracy);
+  
+      const result = await response.json();
+      setClassificationResult(result.classification);
+      setAccuracy(Math.round(result.accuracy));
+  
     } catch (error) {
-      console.error('Error uploading image:', error);
+      console.error('Error uploading image:', error.message);
     } finally {
       // Stop loading
       setIsLoading(false);
     }
   };
+  
 
   const openUploadDialog = () => {
     setOpenDialog(true);
