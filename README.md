@@ -1,2 +1,5 @@
-Cards Classifer 
-Built using Next JS , Node Express Mongo DB
+# Cards Classifer 
+
+- ### Frontend - Next JS Tailwind Shardcn
+- ### Backend Node Js Typescript Prisma Zod MongoDB
+- ### Authentication JWT 
