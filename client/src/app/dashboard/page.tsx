@@ -7,7 +7,7 @@ import { Sidebar } from '@/components/ui/sidebar';
 import { NavBar } from '@/components/ui/DashBoard/DashBoardNavBar';
 
 const Dashboard = () => {
-  const router = useRouter(); // Use useRouter for navigation
+  const router = useRouter(); 
 
   return (
     <div className="flex">
@@ -30,7 +30,7 @@ const Dashboard = () => {
             <CardFooter className="flex justify-center">
               <Button
                 className="bg-gray-800 text-white hover:bg-gray-600"
-                onClick={() => router.push('/card-classifier')} // Use router.push for navigation
+                onClick={() => router.push('/card-classifier')} 
               >
                 Go to Classifier
               </Button>
